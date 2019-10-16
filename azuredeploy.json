@@ -236,9 +236,7 @@
                 ]
             },
             "protectedSettings": {
-                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File bootstrap.ps1",
-                "storageAccountName": "myStorageAccountName",
-                "storageAccountKey": "myStorageAccountKey"
+                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File bootstrap.ps1"
             }
         }
     }

@@ -217,7 +217,7 @@
       {
         "apiVersion": "2018-06-01",
         "type": "Microsoft.Compute/virtualMachines/extensions",
-        "name": "virtualMachineName/bootstrap",
+        "name": "[concat(parameters('vmName'),'/bootstrap')]",
         "location": "[resourceGroup().location]",
         "dependsOn": [
             "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -232,9 +232,8 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
                 "fileUris": [
-                    "script location"
-                ],
-                "timestamp":123456789
+                    "https://raw.githubusercontent.com/nathankitchen/azure-dev-env/master/bootstrap.ps1"
+                ]
             },
             "protectedSettings": {
                 "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File bootstrap.ps1",
